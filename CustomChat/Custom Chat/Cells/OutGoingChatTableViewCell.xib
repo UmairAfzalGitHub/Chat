@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="259" id="KGk-i7-Jjw" customClass="OutGoingChatTableViewCell" customModule="CustomChat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="258.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. Johnson Smith Doe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFP-8y-FHI">
+                        <rect key="frame" x="70" y="14.5" width="176" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RhW-Z6-PPS">
+                        <rect key="frame" x="262" y="20" width="50" height="50"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Linux-Avatar-300px" translatesAutoresizingMaskIntoConstraints="NO" id="1zL-YU-qsl">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bFB-Ef-9tz"/>
+                                    <constraint firstAttribute="width" constant="50" id="jGe-Kl-MjK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 feb, 7:18 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU1-q3-5bA">
+                        <rect key="frame" x="153.5" y="236" width="92.5" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="OgY-Ip-Xrh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRW-d8-t4U" customClass="TriangleView" customModule="CustomChat" customModuleProvider="target">
+                        <rect key="frame" x="238" y="40" width="20" height="20"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="2Qm-VE-S2Z"/>
+                            <constraint firstAttribute="height" constant="20" id="GlY-eH-9si"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGY-Ho-t7r">
+                        <rect key="frame" x="70" y="35" width="176" height="199"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqz-C9-IjW">
+                                <rect key="frame" x="8" y="8" width="160" height="183"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">hello there 
+this is a 
+dummy message 
+for testing 
+message cell. 
+Which can be very 
+lo
+ng or 
+very short</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.67079532620000004" green="0.81270354" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Aqz-C9-IjW" firstAttribute="top" secondItem="MGY-Ho-t7r" secondAttribute="top" constant="8" id="aLj-iv-tlx"/>
+                            <constraint firstAttribute="trailing" secondItem="Aqz-C9-IjW" secondAttribute="trailing" constant="8" id="gwj-NG-deq"/>
+                            <constraint firstItem="Aqz-C9-IjW" firstAttribute="leading" secondItem="MGY-Ho-t7r" secondAttribute="leading" constant="8" id="lND-71-xK9"/>
+                            <constraint firstAttribute="bottom" secondItem="Aqz-C9-IjW" secondAttribute="bottom" constant="8" id="qej-gm-bZ7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XU1-q3-5bA" firstAttribute="trailing" secondItem="MGY-Ho-t7r" secondAttribute="trailing" id="43Y-uT-JBW"/>
+                    <constraint firstItem="MGY-Ho-t7r" firstAttribute="top" secondItem="bFP-8y-FHI" secondAttribute="bottom" id="5Y4-s6-iK2"/>
+                    <constraint firstItem="RhW-Z6-PPS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="C2R-cZ-7nT"/>
+                    <constraint firstItem="MGY-Ho-t7r" firstAttribute="top" secondItem="RhW-Z6-PPS" secondAttribute="top" constant="15" id="CV6-VL-gPu"/>
+                    <constraint firstItem="QRW-d8-t4U" firstAttribute="trailing" secondItem="MGY-Ho-t7r" secondAttribute="trailing" constant="12" id="FEI-4z-QcP"/>
+                    <constraint firstItem="RhW-Z6-PPS" firstAttribute="leading" secondItem="MGY-Ho-t7r" secondAttribute="trailing" constant="16" id="InL-EM-rgT"/>
+                    <constraint firstItem="bFP-8y-FHI" firstAttribute="leading" secondItem="MGY-Ho-t7r" secondAttribute="leading" id="Vrv-tg-HJM"/>
+                    <constraint firstItem="bFP-8y-FHI" firstAttribute="trailing" secondItem="MGY-Ho-t7r" secondAttribute="trailing" id="YGC-zZ-xuV"/>
+                    <constraint firstItem="XU1-q3-5bA" firstAttribute="top" secondItem="MGY-Ho-t7r" secondAttribute="bottom" constant="2" id="cnD-ZZ-cZE"/>
+                    <constraint firstItem="MGY-Ho-t7r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="70" id="h5F-Zn-bje"/>
+                    <constraint firstAttribute="trailing" secondItem="RhW-Z6-PPS" secondAttribute="trailing" constant="8" id="nnB-xE-OSd"/>
+                    <constraint firstAttribute="bottom" secondItem="XU1-q3-5bA" secondAttribute="bottom" constant="5.5" id="uiL-PJ-tw4"/>
+                    <constraint firstItem="QRW-d8-t4U" firstAttribute="top" secondItem="MGY-Ho-t7r" secondAttribute="top" constant="5" id="yPx-QS-H2M"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="XU1-q3-5bA" id="pYh-9K-gAu"/>
+                <outlet property="messageLabel" destination="Aqz-C9-IjW" id="65z-3d-GwN"/>
+                <outlet property="messageLabelSuperView" destination="MGY-Ho-t7r" id="CCe-m4-oJ4"/>
+                <outlet property="nameLabel" destination="bFP-8y-FHI" id="8b9-hT-wXA"/>
+                <outlet property="profileImageView" destination="1zL-YU-qsl" id="3gd-Rv-Lt9"/>
+                <outlet property="triangleView" destination="QRW-d8-t4U" id="5Ax-yP-0p7"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="161.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Linux-Avatar-300px" width="300" height="300"/>
+    </resources>
+</document>

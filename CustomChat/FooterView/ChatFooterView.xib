@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ChatFooterView" customModule="CustomChat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Lr-fj-n8H">
+                    <rect key="frame" x="10" y="10" width="295" height="114"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="65" id="ovU-p5-6Zc"/>
+                    </constraints>
+                    <string key="text">hi there  hi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi therehi there</string>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDz-YR-uwB">
+                    <rect key="frame" x="315" y="74" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5Hh-CQ-qhX"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ij5-Xb-7c9"/>
+                        <constraint firstAttribute="width" constant="50" id="x4Z-VB-2JJ"/>
+                    </constraints>
+                    <state key="normal" image="send"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.85362694299999997" green="0.82834346609999998" blue="0.83240102900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="SDz-YR-uwB" secondAttribute="bottom" constant="10" id="1Jj-HG-udN"/>
+                <constraint firstItem="2Lr-fj-n8H" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="2zj-1b-aJs"/>
+                <constraint firstItem="SDz-YR-uwB" firstAttribute="leading" secondItem="2Lr-fj-n8H" secondAttribute="trailing" constant="10" id="9ra-wl-Ax4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2Lr-fj-n8H" secondAttribute="bottom" constant="10" id="Bgx-Gp-djA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SDz-YR-uwB" secondAttribute="trailing" constant="10" id="fNJ-W9-ggc"/>
+                <constraint firstItem="2Lr-fj-n8H" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="nFc-85-6VJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="379"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="send" width="512" height="512"/>
+    </resources>
+</document>
