@@ -25,6 +25,8 @@
 		68BB75FA20388BE000C81A69 /* InComingChatImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BB75F820388BE000C81A69 /* InComingChatImageTableViewCell.xib */; };
 		68BB75FD2038A76A00C81A69 /* OutGoingChatImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BB75FC2038A76900C81A69 /* OutGoingChatImageTableViewCell.swift */; };
 		68BB75FE2038AE6C00C81A69 /* OutGoingChatImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68BB75FB2038A76900C81A69 /* OutGoingChatImageTableViewCell.xib */; };
+		68FB74222404301D00946478 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB74212404301D00946478 /* TriangleView.swift */; };
+		68FB74242404306600946478 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FB74232404306600946478 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		68BB75F820388BE000C81A69 /* InComingChatImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InComingChatImageTableViewCell.xib; sourceTree = "<group>"; };
 		68BB75FB2038A76900C81A69 /* OutGoingChatImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutGoingChatImageTableViewCell.xib; sourceTree = "<group>"; };
 		68BB75FC2038A76900C81A69 /* OutGoingChatImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutGoingChatImageTableViewCell.swift; sourceTree = "<group>"; };
+		68FB74212404301D00946478 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		68FB74232404306600946478 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F9661920D30E8AEC12DAE83A /* Pods-CustomChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomChat/Pods-CustomChat.debug.xcconfig"; sourceTree = "<group>"; };
 		FB66364A43F21B642FEC1422 /* Pods_CustomChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +116,8 @@
 		686B9A3C2033567100BAABC6 /* CustomChat */ = {
 			isa = PBXGroup;
 			children = (
+				68FB742024042FFF00946478 /* Custom Controls */,
+				68FB741F24042FF800946478 /* Models */,
 				68134BF12038208500544B2B /* Custom Chat */,
 				6862CEE72034A7FA00E474C9 /* FooterView */,
 				686B9A3D2033567100BAABC6 /* AppDelegate.swift */,
@@ -137,6 +143,22 @@
 				68BB75FB2038A76900C81A69 /* OutGoingChatImageTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		68FB741F24042FF800946478 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				68FB74232404306600946478 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		68FB742024042FFF00946478 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				68FB74212404301D00946478 /* TriangleView.swift */,
+			);
+			path = "Custom Controls";
 			sourceTree = "<group>";
 		};
 		C33F1C8A6B73F82521BF3DFE /* Pods */ = {
@@ -290,6 +312,8 @@
 				686B9A56203356F100BAABC6 /* OutGoingChatTableViewCell.swift in Sources */,
 				686B9A402033567100BAABC6 /* ViewController.swift in Sources */,
 				68134BF4203820AF00544B2B /* CustomChatViewController.swift in Sources */,
+				68FB74242404306600946478 /* Message.swift in Sources */,
+				68FB74222404301D00946478 /* TriangleView.swift in Sources */,
 				686B9A3E2033567100BAABC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

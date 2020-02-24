@@ -28,32 +28,6 @@ class CustomChatViewController: UIViewController {
         super.viewDidLoad()
 
         setupViewControllerUI()
-
-        var i = 0
-
-        while i<30 {
-            let message = Message()
-
-            message.message = "\(i) \n Hi \n there  this is some long text here which is good for testing \n Its just a sample"
-            message.senderId = "Me"
-
-            if i%2 == 0 {
-                message.senderId = "Other"
-            }
-
-            if i%4 == 0 && message.senderId == "Other" {
-                message.messageType = .image
-
-                if i%6 == 0 {
-                    message.messageImage = #imageLiteral(resourceName: "telegram-icon")
-                }
-            }
-
-            messages.append(message)
-            i += 1
-        }
-
-        tableView.reloadData()
         loadData()
     }
 
@@ -71,11 +45,6 @@ class CustomChatViewController: UIViewController {
         IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = true
         NotificationCenter.default.removeObserver(self)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func setupViewControllerUI() {
@@ -134,19 +103,47 @@ class CustomChatViewController: UIViewController {
         alert.addAction(cancelAction)
 
         present(alert, animated: true, completion: nil)
-
     }
 
     // MARK:  Private Methods
 
     func loadData() {
+        populateDummyData()
         scrollToBttom()
+    }
+
+    private func populateDummyData() {
+        var i = 0
+
+        while i<30 {
+            let message = Message()
+
+            message.message = "\(i) \n Hi \n there  this is some long text here which is good for testing \n Its just a sample"
+            message.senderId = "Me"
+
+            if i%2 == 0 {
+                message.senderId = "Other"
+            }
+
+            if i%4 == 0 && message.senderId == "Other" {
+                message.messageType = .image
+
+                if i%6 == 0 {
+                    message.messageImage = #imageLiteral(resourceName: "telegram-icon")
+                }
+            }
+
+            messages.append(message)
+            i += 1
+        }
+
+        tableView.reloadData()
     }
 
     private func didFinishedSendingMessage() {
 
         let indexPathOfLastRow = IndexPath(row: self.messages.count - 1, section: 0)
-        self.tableView.insertRows(at: [indexPathOfLastRow], with: UITableViewRowAnimation.left)
+        self.tableView.insertRows(at: [indexPathOfLastRow], with: .fade)
         self.tableView.scrollToRow(at: indexPathOfLastRow, at: .bottom, animated: false)
 
         // Resize TextView to default size
@@ -251,7 +248,6 @@ extension CustomChatViewController: UITextViewDelegate {
 
 extension CustomChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -268,60 +264,3 @@ extension CustomChatViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
 }
-
-class Message {
-    var id = ""
-    var message = ""
-    var messageType: MessageType = .text
-    var profileImageUrl = ""
-    var messageImage = #imageLiteral(resourceName: "vertical_panorama_by_verticaldubai-d3gp1ja")
-    var messageImageUrl = ""
-    var senderName = ""
-    var senderId = ""
-}
-
-enum MessageType: String {
-    case text
-    case image
-}
-
-extension CGSize {
-    func sizeByDelta(dw:CGFloat, dh:CGFloat) -> CGSize {
-        return CGSize(width: self.width + dw, height: self.height + dh)
-    }
-}
-
-class ChatMessageLabel: UILabel {
-
-    override var intrinsicContentSize: CGSize {
-        return super.intrinsicContentSize.sizeByDelta(dw: 20, dh: 20)
-    }
-}
-
-class TriangleView : UIView {
-
-    var fillColor = UIColor.red.cgColor
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override func draw(_ rect: CGRect) {
-
-        guard let context = UIGraphicsGetCurrentContext() else { return }
-
-        context.beginPath()
-        context.move(to: CGPoint(x: rect.minX, y: rect.maxY))
-        context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-        context.addLine(to: CGPoint(x: (rect.maxX / 2.0), y: rect.minY))
-        context.closePath()
-
-        context.setFillColor(fillColor)
-        context.fillPath()
-    }
-}
-
