@@ -1,5 +1,5 @@
-[![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)]
-[![Languages](https://img.shields.io/badge/Language-Swift-orange.svg)]
+![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)
+![Languages](https://img.shields.io/badge/Language-Swift-orange.svg)
 
 
 ## IOS-SWIFT-CHAT
