@@ -34,16 +34,16 @@ class CustomChatViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = false
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil) // To detect when keyboard is going to dismiss
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil) // To detect when keyboard is going to dismiss
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = true
-        IQKeyboardManager.sharedManager().enableAutoToolbar = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -73,6 +73,7 @@ class CustomChatViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func sendButtonTapped(_ sender: Any) {
+        if inputTextView.text.isEmpty { return }
         let message = Message()
         message.message = inputTextView.text
         message.senderId = "Me"
@@ -84,24 +85,23 @@ class CustomChatViewController: UIViewController {
 
     @IBAction func pickImageTapped(_ sender: Any) {
 
-        let alert = UIAlertController.init(title: "Select media for image", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert = UIAlertController.init(title: "Select media for image", message: "", preferredStyle: UIAlertController.Style.actionSheet)
 
-        let galleryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.default) { (action) in
+        let galleryAction = UIAlertAction(title: "Gallery", style: UIAlertAction.Style.default) { (action) in
             self.imagePicker.sourceType = .photoLibrary
             self.present(self.imagePicker, animated: true, completion: nil)
         }
 
-        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.default) { (action) in
+        let cameraAction = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { (action) in
             self.imagePicker.sourceType = .camera
             self.present(self.imagePicker, animated: true, completion: nil)
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel)
 
         alert.addAction(galleryAction)
         alert.addAction(cameraAction)
         alert.addAction(cancelAction)
-
         present(alert, animated: true, completion: nil)
     }
 
@@ -248,9 +248,9 @@ extension CustomChatViewController: UITextViewDelegate {
 
 extension CustomChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             let message = Message()
             message.senderId = "Me"
             message.messageType = .image

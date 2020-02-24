@@ -6,5 +6,5 @@ target 'CustomChat' do
   use_frameworks!
 
   # Pods for CustomChat
-pod 'IQKeyboardManagerSwift', '5.0.0'
+pod 'IQKeyboardManagerSwift'
 end
