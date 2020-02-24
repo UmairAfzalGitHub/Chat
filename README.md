@@ -1,5 +1,5 @@
-[![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)](https://cocoapods.org/pods/CometChatPro)
-[![Languages](https://img.shields.io/badge/Language-Swift-orange.svg)](https://github.com/cometchat-pro/ios-swift-chat-app)
+[![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)]
+[![Languages](https://img.shields.io/badge/Language-Swift-orange.svg)]
 
 
 ## IOS-SWIFT-CHAT
